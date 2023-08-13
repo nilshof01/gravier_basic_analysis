@@ -27,7 +27,7 @@ create_forest_plot <- function(chosen_genes){
                       panel.grid.major.x = element_line(color = "gray"),
                       plot.title = element_text(hjust = 0.5, size = 16),
                       axis.text.y = element_text(size = 5)) +
-                ggtitle("Significance of log expressions for listed genes with CI = 0.95")
+                ggtitle("Significance of log expressions for listed genes")
   return(forest_plot)
  }
 

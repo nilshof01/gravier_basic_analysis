@@ -7,7 +7,9 @@ wrangle_gravier <- function(table_gravier){
                                             "good" = 0,
                                             "poor" = 1)) %>%
                     unnest(cols = x) %>%
-                    pivot_longer(-outcome, names_to = "gene", values_to = "expression")
+                    pivot_longer(-outcome,
+                                 names_to = "gene",
+                                 values_to = "expression")
   return(table_gravier)
 }
 

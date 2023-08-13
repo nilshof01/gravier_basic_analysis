@@ -10,19 +10,41 @@ OS: Windows 11 R version: 4.3.1 install RTools \> 4.3 :
 
 ## Run the analysis and use the data
 
-1.  The scripts in augment_data download the gravier dataset and
-    transpose using pivotting to have the genes listed on the y axis.
-    The output of this processing step is a data table with 100 randomly
-    chosen genes, their expression values and the outcome of the
-    corresponding sample. You can set a seed to control the
-    reproducibility of your analysis. <b>
+The scripts in augment_data download the gravier dataset and transpose
+using pivotting to have the genes listed on the y axis. The output of
+this processing step is a data table with 100 randomly chosen genes,
+their expression values and the outcome of the corresponding sample. You
+can set a seed to control the reproducibility of your analysis. <b>
 
 ``` r
 source("augment_data/run_full_augmentation.R")
 ```
 
+    ## Loading required package: tidyverse
+
+    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+    ## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+    ## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+    ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+    ## ✔ purrr     1.0.1     
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+    ## Loading required package: devtools
+    ## 
+    ## Loading required package: usethis
+    ## 
+    ## Loading required package: broom
+
 ``` r
 chosen_genes <- choose_genes_rand(set_seed = 123)
+```
+
+    ## Loading required package: datamicroarray
+
+``` r
 head(chosen_genes)
 ```
 
@@ -54,6 +76,11 @@ inducing metastasis.
 source("plots/forest_plot.R")
 forest_plot <- create_forest_plot(chosen_genes)
 ```
+
+    ## Warning: There was 1 warning in `mutate()`.
+    ## ℹ In argument: `log2_expr_lvl = log2(expression)`.
+    ## Caused by warning:
+    ## ! NaNs produced
 
 ``` r
 print(forest_plot)
