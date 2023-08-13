@@ -1,14 +1,15 @@
-load_data_as_tibble <- function(url, destination_path) {
-  download.file(url, destination_path)
-  load(destination_path)
-  # Assuming that the data loaded is named "gravier". 
-  # If not, replace "gravier" with the correct name
-  gravier_tibble <- as_tibble(get("gravier", envir = .GlobalEnv)) 
-  return(gravier_tibble)
+# function for downloading gravier dataset in IDE from data_microarray repository.
+# change url if owner changes it
+load_data_as_tibble <- function(url = 'ramhiser/datamicroarray') {
+  library(devtools)
+  if (!require(datamicroarray)) {
+    install_github("ramhiser/datamicroarray")
+    library(datamicroarray)
+  } 
+  data('gravier',
+       package = 'datamicroarray')
+  table_gravier <- as_tibble(gravier)
+  return(table_gravier)
 }
-
-# Call the function
-url <- "https://github.com/ramhiser/datamicroarray/blob/master/data/gravier.RData"
-destination_path <- "gravier.RData"
-gravier_tibble <- load_data_as_tibble(url, destination_path)
+gravier_table <- load_data_as_tibble()
 
