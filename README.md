@@ -53,6 +53,7 @@ significance )of the model was used to label the significance of the
 gene for an outcome in the plot. To sum up, this plot can be used to
 identify genes which might have an important role for preventing or
 inducing metastasis.
+<b>
 
 ``` r
 source("plots/forest_plot.R")
