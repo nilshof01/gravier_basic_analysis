@@ -1,3 +1,11 @@
+---
+title: "Your Title"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+
 # Purpose of the repository
 This repository showcases how Rstudio can be used to create a quick and reproducible study for certain datasets in bio data science.
 
@@ -16,7 +24,7 @@ chosen_genes <- choose_genes_rand(set_seed = 123)
 head(chosen_genes)
 
 ```
-<b>
+
 ### Analyse the significance of the genes for an output
 For each of the previously selected genes 168 samples were taken which contain now the log expression values and an output originally labelled as poor or good where poor indicates early mestastasis after diagnosis and no symptoms were detected for samples labelled with good. The impact of the chosen genes independently of a specific outcome was calculated by applying a logistic regression on the expression values given the outcome for a certain gene. The p value (p < 0.05 indicates significance )of the model was used to label the significance of the gene for an outcome in the plot. To sum up, this plot can be used to identify genes which might have an important role for preventing or inducing metastasis.
 
