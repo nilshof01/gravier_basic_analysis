@@ -38,7 +38,8 @@ head(chosen_genes)
     ## 4       0 g9C03      0.0101 
     ## 5       0 g2E05     -0.00868
     ## 6       0 g6E07     -0.0454
-
+    
+<b>
 ### Analyse the significance of the genes for an output
 <b>
 
