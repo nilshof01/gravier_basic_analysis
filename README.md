@@ -40,6 +40,7 @@ head(chosen_genes)
     ## 6       0 g6E07     -0.0454
 
 ### Analyse the significance of the genes for an output
+<b>
 
 For each of the previously selected genes 168 samples were taken which
 contain now the log expression values and an output originally labelled
